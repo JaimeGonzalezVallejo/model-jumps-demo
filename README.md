@@ -4,6 +4,8 @@
 
 A small static page that answers “which configuration should I try next?” from the configuration you use today, in four directions and with two strategies. The mathematics is standard; the contribution is the scenario-based interaction.
 
+Why it works this way: [Choosing a model from where you are](docs/choosing-a-model.md).
+
 ## Run it
 
 From this project's directory, run:
