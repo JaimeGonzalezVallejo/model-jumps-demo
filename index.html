@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Model jumps</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="./styles.css">
+  <script type="module" src="./app.js"></script>
+</head>
+<body>
+<main>
+  <header>
+    <h1>Model jumps</h1>
+    <p>Where could you go for more capability or a lower cost?</p>
+    <p class="notice"><strong>Synthetic data.</strong> All numbers are invented. These model names are not real.</p>
+  </header>
+  <section class="plate" aria-labelledby="current-heading">
+    <h2 id="current-heading" tabindex="-1">Current configuration</h2>
+    <div id="current"></div>
+  </section>
+  <div class="strategy" role="group" aria-label="Selection strategy">
+    <span>Strategy</span>
+    <div class="strategy-buttons">
+      <button type="button" data-strategy="conservative" aria-pressed="true">Conservative</button>
+      <button type="button" data-strategy="best-value" aria-pressed="false">Best value</button>
+    </div>
+  </div>
+  <p class="hint">Select a model name to explore its next four jumps.</p>
+  <section id="directions" aria-label="Four jump directions"></section>
+  <details class="own-data">
+    <summary>Use your own measurements</summary>
+    <div class="own-data-content">
+      <p>Paste one configuration per line: name, effort, intelligence, USD per task, seconds. Effort is optional. Separate fields with commas or tabs; use tabs for comma decimals.</p>
+      <p>Nothing leaves your browser. Measurements are not saved and disappear when you reload.</p>
+      <p>Rows are comparable only when they come from the same task or task mix, the same scoring scale, and the same measurement conditions.</p>
+      <label for="measurements-input">Your measurements</label>
+      <textarea id="measurements-input" rows="4" spellcheck="false" autocomplete="off" placeholder="Model A, medium, 47.8, 0.21, 14
+Model B, high, 50.2, 0.32, 39"></textarea>
+      <div class="own-data-actions">
+        <button type="button" id="apply-data">Apply measurements</button>
+        <button type="button" id="restore-example">Restore synthetic example</button>
+      </div>
+      <label for="current-row">Current configuration</label>
+      <select id="current-row" disabled><option>Apply at least three usable rows first</option></select>
+      <p id="data-result" role="status" aria-live="polite"></p>
+    </div>
+  </details>
+  <details class="methodology">
+    <summary>Methodological notes</summary>
+    <ul>
+      <li>Intelligence-index differences do not guarantee better performance on a particular task.</li>
+      <li>Small score differences may be noise.</li>
+      <li>API cost is not subscription-credit consumption.</li>
+      <li>Measured time is not a latency guarantee.</li>
+      <li>Best value can recommend a large jump.</li>
+      <li>Reasoning efforts need separate measurements to support separate performance claims.</li>
+    </ul>
+  </details>
+  <p class="closing">Synthetic data only. No API calls; selecting a model only explores the demo.</p>
+</main>
+</body>
+</html>
